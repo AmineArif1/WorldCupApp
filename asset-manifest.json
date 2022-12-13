@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Final-React-Project/static/css/main.2660a52d.css",
+    "main.css": "/Final-React-Project/static/css/main.0f77af35.css",
     "main.js": "/Final-React-Project/static/js/main.c6e367f9.js",
     "static/media/hero.svg": "/Final-React-Project/static/media/hero.0e5f66ce7f4ce767d60f972048152d51.svg",
     "static/media/argentina.svg": "/Final-React-Project/static/media/argentina.75a53a7810f5e403705290c05fdf3fb5.svg",
@@ -13,11 +13,11 @@
     "index.html": "/Final-React-Project/index.html",
     "static/media/standing.svg": "/Final-React-Project/static/media/standing.5989f4c0c3cabc0a89c0264477e9732a.svg",
     "static/media/dashboard.svg": "/Final-React-Project/static/media/dashboard.34dfb69d3f61d21c285eb11e30d3feb9.svg",
-    "main.2660a52d.css.map": "/Final-React-Project/static/css/main.2660a52d.css.map",
+    "main.0f77af35.css.map": "/Final-React-Project/static/css/main.0f77af35.css.map",
     "main.c6e367f9.js.map": "/Final-React-Project/static/js/main.c6e367f9.js.map"
   },
   "entrypoints": [
-    "static/css/main.2660a52d.css",
+    "static/css/main.0f77af35.css",
     "static/js/main.c6e367f9.js"
   ]
 }
