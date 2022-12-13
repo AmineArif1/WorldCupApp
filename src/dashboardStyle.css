@@ -68,7 +68,7 @@ body {
 }
 .matchRow {
   display: inline-flex;
-  gap: 90px;
+  justify-content: space-between;
   margin-left: 30px;
   margin-top: 10px;
   background-color: #1b1c21;
@@ -103,11 +103,67 @@ body {
   border-radius: 10px;
   background-color: #323337;
 }
-.date{
-  color:gray !important;
+.date {
+  color: gray !important;
   font-weight: 300;
-
 }
-.originColorRow{
+.originColorRow {
   background-color: #212227;
+}
+.phoneNav {
+  display: none;
+}
+@media only screen and (max-width: 800px) {
+  .Menu {
+    display: none;
+  }
+  .flexHero {
+    flex-direction: column;
+  }
+  .hero {
+    width: 95%;
+  }
+  .weather {
+    width: 100%;
+  }
+
+  .inputLoop {
+    width: 100%;
+  }
+  .phoneNav {
+    display: flex;
+    position: fixed;
+    height: 75px;
+    gap: 20px;
+    background-color: #1b1c21;
+    padding: 20px;
+    border-radius: 20px;
+    bottom: 20px;
+    justify-content: space-between;
+    left: 20%;
+    right: 20%;
+    border: 1px white solid;
+  }
+}
+@media only screen and (max-width: 644px) {
+  .date {
+    display: none;
+  }
+  .matchRow {
+    justify-content: space-between;
+  }
+  .phoneNav {
+    display: flex;
+    position: fixed;
+    height: 75px;
+    gap: 20px;
+    background-color: #1b1c21;
+    padding: 20px;
+    border-radius: 20px;
+    bottom: 20px;
+    justify-content: space-between;
+    left: 20%;
+    right: 20%;
+    border: 1px white solid;
+  }
 }
