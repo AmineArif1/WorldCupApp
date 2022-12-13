@@ -1,5 +1,5 @@
 .hero {
-  width: 800px;
+  width: 600px;
   margin: 10px;
   margin-left: 20px;
   -webkit-box-shadow: 0px 5px 15px 5px rgba(255, 255, 255, 0.1);
@@ -38,9 +38,11 @@ body {
 .flexHero {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .weather {
-  width: 390px;
+  width: 30%;
   margin-top: 10px;
   border-radius: 10px;
   background-color: #1b1c21;
@@ -112,6 +114,17 @@ body {
 }
 .phoneNav {
   display: none;
+}
+@media only screen and (max-width: 1200px) {
+  .hero {
+    width: 100%;
+  }
+  .weather {
+    width: 100%;
+  }
+  .inputLoop {
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 800px) {
   .Menu {
