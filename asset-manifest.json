@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Final-React-Project/static/css/main.2660a52d.css",
+    "main.js": "/Final-React-Project/static/js/main.c6e367f9.js",
+    "static/media/hero.svg": "/Final-React-Project/static/media/hero.0e5f66ce7f4ce767d60f972048152d51.svg",
+    "static/media/argentina.svg": "/Final-React-Project/static/media/argentina.75a53a7810f5e403705290c05fdf3fb5.svg",
+    "static/media/weather.png": "/Final-React-Project/static/media/weather.19cda3b1f6d0465c7bfc.png",
+    "static/media/logo.png": "/Final-React-Project/static/media/logo.dc8fff1058ce22a4ee22.png",
+    "static/media/translateLogo.png": "/Final-React-Project/static/media/translateLogo.ab86ad06b792b5adf907.png",
+    "static/media/italy.svg": "/Final-React-Project/static/media/italy.f67f5b7a23fa22fbdf650848a5d3a627.svg",
+    "static/media/teams.svg": "/Final-React-Project/static/media/teams.a57a3c1839a71f5ccd8de651efdc8adc.svg",
+    "static/media/Loop.svg": "/Final-React-Project/static/media/Loop.6dbc551e01702fbf67e41c11c4f1020a.svg",
+    "index.html": "/Final-React-Project/index.html",
+    "static/media/standing.svg": "/Final-React-Project/static/media/standing.5989f4c0c3cabc0a89c0264477e9732a.svg",
+    "static/media/dashboard.svg": "/Final-React-Project/static/media/dashboard.34dfb69d3f61d21c285eb11e30d3feb9.svg",
+    "main.2660a52d.css.map": "/Final-React-Project/static/css/main.2660a52d.css.map",
+    "main.c6e367f9.js.map": "/Final-React-Project/static/js/main.c6e367f9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2660a52d.css",
+    "static/js/main.c6e367f9.js"
+  ]
+}
