@@ -1,5 +1,5 @@
 .hero {
-  width: 600px;
+  width: 800px;
   margin: 10px;
   margin-left: 20px;
   -webkit-box-shadow: 0px 5px 15px 5px rgba(255, 255, 255, 0.1);
@@ -38,7 +38,7 @@ body {
   gap: 10px;
 }
 .weather {
-  width: 320px;
+  width: 390px;
   margin-top: 10px;
   border-radius: 10px;
   background-color: #1b1c21;

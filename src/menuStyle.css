@@ -27,7 +27,7 @@
 }
 .Menu h6 {
   color: #fff;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
 }
 .dash{
@@ -38,7 +38,7 @@
 }
 .dash p{
     color: gray;
-    font-size: 14px;
+    font-size: 22px;
     font-weight: 500;
     transform: translateY(3px);
 }
