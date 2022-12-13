@@ -19,16 +19,18 @@
 .inputLoop {
   background-color: #2e3034;
   border: 0px;
-  width: 400px;
-  height: 30px;
+  width: 500px;
+  height: 40px;
   border-radius: 5px;
   color: white;
-  padding-left: 28px;
+  padding-left: 50px;
+  font-size: 18px;
 }
 .loop {
   position: absolute;
   left: 22px;
-  top: 22px;
+  top: 26px;
+  scale: 1.5;
 }
 body {
   overflow-x: hidden;
