@@ -132,6 +132,7 @@ body {
   }
   .flexHero {
     flex-direction: column;
+   
   }
   .hero {
     width: 95%;

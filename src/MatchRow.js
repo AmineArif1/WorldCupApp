@@ -3,18 +3,20 @@ import italy from "./imgs/italy.svg";
 function MatchRow(props) {
   return (
     <>
-      <div className={props.pair%2==1 ? "matchRow" : "matchRow originColorRow"}  >
+      <div
+        className={props.pair % 2 == 1 ? "matchRow" : "matchRow originColorRow"}
+      >
         <div className="fr9a">
-          <img src={argentina}></img>
-          <p className="fr9aName">Argentina</p>
+          <img src={props.flag2}></img>
+          <p className="fr9aName">{props.homeT}</p>
         </div>
-        <p className="score">1 - 2</p>
+        <p className="score">{props.score}</p>
         <div className="fr9a">
-          <img src={italy}></img>
-          <p className="fr9aName">Italy</p>
+          <img src={props.flag1}></img>
+          <p className="fr9aName">{props.awayT}</p>
         </div>
         <p className="fullTime">Full - Time</p>
-        <p className="date">18 December 2022</p>
+        <p className="date">{props.time}</p>
       </div>
     </>
   );
