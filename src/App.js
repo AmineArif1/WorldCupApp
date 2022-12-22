@@ -4,6 +4,7 @@ import SideMenu from "./SideMenu.js";
 import Dashboard from "./Dashboard.js";
 import PhoneNav from "./PhoneNav.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Translate from "./Translate.js";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/Standings" element={<></>} />
+            <Route path="/Translate" element={<Translate/>} />
             {/*<Route
               path="/favoris"
               element={

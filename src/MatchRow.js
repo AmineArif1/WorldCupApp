@@ -1,6 +1,8 @@
 import argentina from "./imgs/argentina.svg";
 import italy from "./imgs/italy.svg";
 function MatchRow(props) {
+  console.log(props.flag1);
+  console.log(props.flag2);
   return (
     <>
       <div
@@ -15,6 +17,7 @@ function MatchRow(props) {
           <img src={props.flag1}></img>
           <p className="fr9aName">{props.awayT}</p>
         </div>
+
         <p className="fullTime">Full - Time</p>
         <p className="date">{props.time}</p>
       </div>

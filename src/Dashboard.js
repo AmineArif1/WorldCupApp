@@ -18,7 +18,7 @@ function Dashboard() {
   useEffect(() => {
     axios
       .get(
-        "http://api.weatherapi.com/v1/current.json?key=fc943211fe5144993947183757221612&q=Doha&aqi=no"
+        "http://api.weatherapi.com/v1/current.json?key=c943211fe5144993947183757221612&q=Doha&aqi=no"
       )
       .then((response) => {
         setWeatherC(response.data.current.temp_c);
@@ -41,31 +41,30 @@ function Dashboard() {
   }, []);
   let flagUrl1;
   let flagUrl2;
-  const getFlagEmoji = (countryCode) =>
-    String.fromCodePoint(
-      ...[...countryCode.toUpperCase()].map((x) => 0x1f1a5 + x.charCodeAt(0))
-    );
+  let key = 0;
+  let match = matches.map((match) => {
+    if (
+      match.away_team.name == "England" ||
+      match.home_team.name == "England" ||
+      match.home_team.name == "Wales" ||
+      match.away_team.name == "Wales" ||
+      match.home_team.name == "Tunisia" ||
+      match.away_team.name == "Tunisia" ||
+      match.home_team.name == "Saudi Arabia" ||
+      match.away_team.name == "Saudi Arabia" ||
+      match.home_team.name == "Poland" ||
+      match.away_team.name == "Poland" ||
+      match.home_team.name == "Korea Republic" ||
+      match.away_team.name == "Korea Republic" ||
+      match.home_team.name == "Switzerland" ||
+      match.away_team.name == "Switzerland" ||
+      match.home_team.name == "Portugal" ||
+      match.away_team.name == "Portugal"
+    ) {
+      return;
+    }
+    key = key + 1;
 
-  console.log(getFlagEmoji("gb")); // 🇬🇧
-  getFlagEmoji("za"); // 🇿🇦
-  getFlagEmoji("th"); // 🇹🇭
-  let match = matches.map((match, key) => {
-    axios
-      .get(
-        `https://countryflagsapi.com/png/${match.away_team.name}`
-      )
-      .then((response) => {
-        flagUrl1 = response.data;
-        console.log(flagUrl1);
-      });
-    axios
-      .get(
-        `https://countryflagsapi.com/png/${match.away_team.name}}`
-      )
-      .then((response) => {
-        flagUrl2 = response;
-        console.log(flagUrl2);
-      });
     return (
       <MatchRow
         awayT={match.away_team.name}
@@ -73,8 +72,12 @@ function Dashboard() {
         score={match.home_team.goals + " - " + match.away_team.goals}
         pair={key}
         time={match.datetime.split("T")[0]}
-        flag1={flagUrl1}
-        flag2={flagUrl2}
+        flag1={`https://flagcdn.com/48x36/${match.away_team.country
+          .toLowerCase()
+          .substring(0, 2)}.png`}
+        flag2={`https://flagcdn.com/48x36/${match.home_team.country
+          .toLowerCase()
+          .substring(0, 2)}.png`}
       />
     );
   });
