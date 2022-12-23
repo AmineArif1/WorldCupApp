@@ -3,7 +3,6 @@ import logo from "./imgs/logo.png";
 import DashElements from "./DashElements";
 import dashboard from "./imgs/dashboard.svg";
 import translateLogo from "./imgs/translateLogo.png";
-import standing from "./imgs/standing.svg";
 import teams from "./imgs/teams.svg";
 function SideMenu() {
   return (
@@ -21,8 +20,9 @@ function SideMenu() {
           <a href="Translate">
             <DashElements name="Translate" img={translateLogo} />
           </a>
-          <DashElements name="Standings" img={standing} />
-          <DashElements name="Teams" img={teams} />
+          <a href="Teams">
+            <DashElements name="Teams" img={teams} />
+          </a>
         </div>
       </div>
     </>

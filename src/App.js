@@ -5,6 +5,7 @@ import Dashboard from "./Dashboard.js";
 import PhoneNav from "./PhoneNav.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Translate from "./Translate.js";
+import Teams from "./Teams.js";
 
 function App() {
   return (
@@ -14,8 +15,8 @@ function App() {
         <Router>
           <Routes>
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/Standings" element={<></>} />
-            <Route path="/Translate" element={<Translate/>} />
+            <Route path="/Translate" element={<Translate />} />
+            <Route path="/Teams" element={<Teams />} />
             {/*<Route
               path="/favoris"
               element={
