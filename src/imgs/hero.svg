@@ -6,16 +6,16 @@
 <rect width="729" height="356" rx="16" fill="#560617"/>
 <path d="M384 384L533.199 -8H772V384H384Z" fill="url(#paint0_linear_183_485)"/>
 <path d="M480 384L629.199 -8H868V384H480Z" fill="url(#paint1_linear_183_485)"/>
-<rect x="335" y="50" width="60" height="72" fill="url(#pattern0)"/>
-<rect width="511" height="374" transform="matrix(-1 0 0 1 876 17)" fill="url(#pattern1)"/>
-<rect x="-100" width="507" height="492" fill="url(#pattern2)"/>
+<rect x="294" y="34" width="142" height="144" fill="url(#pattern0)"/>
+<rect width="532" height="374" transform="matrix(-1 0 0 1 862 12)" fill="url(#pattern1)"/>
+<rect x="-113" width="507" height="492" fill="url(#pattern2)"/>
 </g>
 <defs>
 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image0_183_485" transform="translate(-0.041763 -0.0392687) scale(0.000535692 0.000446277)"/>
 </pattern>
 <pattern id="pattern1" patternContentUnits="objectBoundingBox" width="1" height="1">
-<use xlink:href="#image1_183_485" transform="translate(-0.152642) scale(0.00195695 0.0026738)"/>
+<use xlink:href="#image1_183_485" transform="translate(-0.12688) scale(0.0018797 0.0026738)"/>
 </pattern>
 <pattern id="pattern2" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image2_183_485" transform="scale(0.00197239 0.00203252)"/>

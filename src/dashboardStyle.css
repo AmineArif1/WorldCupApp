@@ -1,10 +1,14 @@
 .hero {
-  width: 600px;
+  width: 758px;
   margin: 10px;
-  margin-left: 20px;
-  -webkit-box-shadow: 0px 5px 15px 5px rgba(255, 255, 255, 0.1);
-  box-shadow: 0px 5px 15px 5px rgba(255, 255, 255, 0.1);
-  border-radius: 5%;
+
+  box-shadow: 0px 5px 15px 5px rgb(255 255 255 / 10%);
+  border-radius: 2%;
+  width: 758px;
+  margin: 10px;
+  margin-left: 40px;
+  box-shadow: 0px 5px 15px 5px rgb(255 255 255 / 10%);
+  border-radius: 2%;
 }
 .dashboard {
   background-color: rgb(209 203 203);
@@ -13,6 +17,7 @@
 .Loop {
   position: relative;
   padding: 15px;
+
   background: linear-gradient(
     86deg,
     rgba(86, 6, 23, 1) 12%,
@@ -44,28 +49,31 @@ body {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  justify-content: center;
 }
 .weather {
-  width: 30%;
+  width: 33%;
   margin-top: 10px;
   border-radius: 10px;
   background-color: #ffffff;
   box-shadow: 0px 5px 15px 5px rgb(255 255 255 / 10%);
   border-radius: 3%;
 }
+.countryWeather {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color:#560617 ;
+  color:white;
+  margin: 20px;
+  padding: 0 20px;
+  border-radius: 25px;
+
+
+
+}
 .imageSun {
-  width: 40%;
-  display: block;
-  margin: auto;
-  margin-top: 50px;
 }
 .weather p {
-  color: white;
-  font-size: 25px;
-  font-weight: 500;
-  text-align: center;
-  margin-top: 10px;
 }
 .dashboard h2 {
   color: #560617;
@@ -80,7 +88,7 @@ body {
   justify-content: space-between;
   margin-left: 30px;
   margin-top: 10px;
-  background-color: #1b1c21;
+  background-color: #560617;
   align-items: center;
   width: 94%;
   padding: 10px;
@@ -188,4 +196,10 @@ body {
     right: 20%;
     border: 1px white solid;
   }
+}
+.matches {
+  background-color: white;
+  margin: 40px;
+  padding: 10px;
+  border-radius: 10px;
 }

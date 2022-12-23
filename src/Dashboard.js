@@ -6,13 +6,16 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import MatchRow from "./MatchRow.js";
 function Dashboard() {
-  let [weatherC, setWeatherC] = useState(null);
-  let [weatherF, setWeatherF] = useState(null);
+  let [weatherDubai, setWeatherDubai] = useState(null);
+  let [weatherCasa, setWeatherCasa] = useState(null);
   let [loading, setLoading] = useState(false);
   let [error, setError] = useState(null);
-  let [city, setCity] = useState("Dubai");
-  let [country, setCountry] = useState("AE");
   let [weatherImage, setWeatherImage] = useState(null);
+  let [weatherImageCasa, setWeatherImageCasa] = useState(null);
+  let [weatherLondon, setWeatherLondon] = useState(null);
+  let [weatherParis, setWeatherParis] = useState(null);
+  let [weatherImageLondon, setWeatherImageLondon] = useState(null);
+  let [weatherImageParis, setWeatherImageParis] = useState(null);
   let [matches, setMatches] = useState([]);
 
   useEffect(() => {
@@ -21,10 +24,48 @@ function Dashboard() {
         "http://api.weatherapi.com/v1/current.json?key=c943211fe5144993947183757221612&q=Doha&aqi=no"
       )
       .then((response) => {
-        setWeatherC(response.data.current.temp_c);
+        setWeatherDubai(response.data.current.temp_c);
         setLoading(true);
         setWeatherImage(response.data.current.condition.icon);
-        setCity(response.data.location.name);
+      })
+      .catch((error) => {
+        setError(error);
+        setLoading(true);
+      });
+    axios
+      .get(
+        "http://api.weatherapi.com/v1/current.json?key=c943211fe5144993947183757221612&q=Casablanca&aqi=no"
+      )
+      .then((response) => {
+        setWeatherCasa(response.data.current.temp_c);
+        setLoading(true);
+        setWeatherImageCasa(response.data.current.condition.icon);
+      })
+      .catch((error) => {
+        setError(error);
+        setLoading(true);
+      });
+      axios
+      .get(
+        "http://api.weatherapi.com/v1/current.json?key=c943211fe5144993947183757221612&q=London&aqi=no"
+      )
+      .then((response) => {
+        setWeatherLondon(response.data.current.temp_c);
+        setLoading(true);
+        setWeatherImageLondon(response.data.current.condition.icon);
+      })
+      .catch((error) => {
+        setError(error);
+        setLoading(true);
+      });
+      axios
+      .get(
+        "http://api.weatherapi.com/v1/current.json?key=c943211fe5144993947183757221612&q=Paris&aqi=no"
+      )
+      .then((response) => {
+        setWeatherParis(response.data.current.temp_c);
+        setLoading(true);
+        setWeatherImageParis(response.data.current.condition.icon);
       })
       .catch((error) => {
         setError(error);
@@ -86,13 +127,32 @@ function Dashboard() {
         <div className="flexHero">
           <img className="hero" src={hero}></img>
           <div className="weather">
-            <img className="imageSun" src={weatherImage} alt="" />
-            <p>{weatherC} C</p>
-            <p>In {city}</p>
+            <div className="countryWeather">
+              <img className="imageSun" src={weatherImage} alt="" />
+              <p>{weatherDubai} C</p>
+              <p>In Dubai</p>
+            </div>
+            <div className="countryWeather">
+              <img className="imageSun" src={weatherImageCasa} alt="" />
+              <p>{weatherCasa} C</p>
+              <p>In Casablanca</p>
+            </div>
+            <div className="countryWeather">
+              <img className="imageSun" src={weatherImageParis} alt="" />
+              <p>{weatherParis} C</p>
+              <p>In Paris</p>
+            </div>
+            <div className="countryWeather">
+              <img className="imageSun" src={weatherImageLondon} alt="" />
+              <p>{weatherLondon} C</p>
+              <p>In London</p>
+            </div>
           </div>
         </div>
-        <h2>FootBall Matches</h2>
-        {match}
+        <div className="matches">
+          <h2>FootBall Matches</h2>
+          {match}
+        </div>
       </div>
     </>
   );
