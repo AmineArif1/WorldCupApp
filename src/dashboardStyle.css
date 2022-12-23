@@ -7,17 +7,22 @@
   border-radius: 5%;
 }
 .dashboard {
-  background-color: #212227;
+  background-color: rgb(209 203 203);
   width: 100%;
 }
 .Loop {
   position: relative;
-  background-color: #1b1c21;
   padding: 15px;
+  background: linear-gradient(
+    86deg,
+    rgba(86, 6, 23, 1) 12%,
+    rgba(86, 6, 23, 1) 27%,
+    rgba(222, 83, 83, 1) 74%
+  );
   border-bottom: 0.5px solid gray;
 }
 .inputLoop {
-  background-color: #2e3034;
+  background-color: white;
   border: 0px;
   width: 500px;
   height: 40px;
@@ -45,10 +50,9 @@ body {
   width: 30%;
   margin-top: 10px;
   border-radius: 10px;
-  background-color: #1b1c21;
-  -webkit-box-shadow: 0px 5px 15px 5px rgba(255, 255, 255, 0.1);
-  box-shadow: 0px 5px 15px 5px rgba(255, 255, 255, 0.1);
-  border-radius: 5%;
+  background-color: #ffffff;
+  box-shadow: 0px 5px 15px 5px rgb(255 255 255 / 10%);
+  border-radius: 3%;
 }
 .imageSun {
   width: 40%;
@@ -64,7 +68,7 @@ body {
   margin-top: 10px;
 }
 .dashboard h2 {
-  color: white;
+  color: #560617;
   font-size: 25px;
   font-weight: 500;
   margin-left: 30px;

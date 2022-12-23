@@ -1,8 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "./Teams.css";
-function Teams() {
+import { useLocation } from "react-router-dom";
+
+function Teams(props) {
   var [teams, setTeams] = useState([]);
+  const location = useLocation();
   useEffect(() => {
     axios({
       method: "GET",
@@ -15,27 +18,60 @@ function Teams() {
       setTeams(response.data.groups);
     });
   }, []);
+
   var teamsList = teams.map((team) => {
     return (
       <div>
-        <h1>Group {team.letter}</h1>
-        {team.teams.map((team) => {
-          return (
-            <div className="team">
-             
-              <h2>{team.name}</h2>
-            </div>
-          );
-        })}
+        <h1 className="group">Group {team.letter}</h1>
+        <div className="team">
+          <table>
+            <tr>
+              <th>Team</th>
+              <th>Wins</th>
+              <th>Draws</th>
+              <th>Losses</th>
+              <th>Goals For</th>
+              <th>Goals Against</th>
+              <th>Points</th>
+            </tr>
+            {team.teams.map((team) => {
+              return (
+                <tr className="Rows">
+                  <td>
+                    <h2>{team.name}</h2>
+                  </td>
+                  <td>
+                    <h2>{team.wins}</h2>
+                  </td>
+                  <td>
+                    <h2>{team.draws}</h2>
+                  </td>
+                  <td>
+                    <h2>{team.losses}</h2>
+                  </td>
+                  <td>
+                    <h2>{team.goals_for}</h2>
+                  </td>
+                  <td>
+                    <h2>{team.goals_against}</h2>
+                  </td>
+                  <td>
+                    <h2>{team.group_points}</h2>
+                  </td>
+                </tr>
+              );
+            })}
+          </table>
+        </div>
       </div>
     );
   });
 
   return (
-    <>
+    <div className="Teams">
       <h1>Standings</h1>
       {teamsList}
-    </>
+    </div>
   );
 }
 

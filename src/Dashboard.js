@@ -39,8 +39,6 @@ function Dashboard() {
       setMatches(response.data);
     });
   }, []);
-  let flagUrl1;
-  let flagUrl2;
   let key = 0;
   let match = matches.map((match) => {
     if (

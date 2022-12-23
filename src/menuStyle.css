@@ -5,12 +5,12 @@
   font-family: "Roboto", sans-serif;
 }
 .Menu {
-  background-color: #1b1c21;
+  background-color: #560617;
   width: 283px;
   position: sticky;
   min-height: 100vh;
-    padding:40px 0 0 20px ;
-    border-right: .5px gray solid;
+  padding: 40px 0 0 20px;
+  border-right: 0.5px gray solid;
 }
 .logoDiv {
   display: flex;
@@ -30,24 +30,22 @@
   font-size: 16px;
   font-weight: 500;
 }
-.dash{
-    display: flex;
-    gap:10px;
-    margin: 20px;
-    
+.dash {
+  display: flex;
+  gap: 10px;
+  margin: 20px;
 }
-.dash p{
-    color: gray;
-    font-size: 22px;
-    font-weight: 500;
-    transform: translateY(3px);
+.dash p {
+  color: gray;
+  font-size: 22px;
+  font-weight: 500;
 }
-.dash .active{
-    color:#f5c451;
+.dash .active {
+  color: #f5c451;
 }
-.dash img{
-    width: 20px;
+.dash img {
+  width: 25px;
 }
-.MenuElement{
-    margin-top: 80px;
+.MenuElement {
+  margin-top: 80px;
 }
