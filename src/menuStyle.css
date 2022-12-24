@@ -11,7 +11,7 @@
     rgba(86, 6, 23, 1) 58%,
     rgba(222, 83, 83, 1) 100%
   );
-  width: 283px;
+  width: 338px;
   position: sticky;
   min-height: 100vh;
   padding: 40px 0 0 20px;
@@ -34,8 +34,6 @@
   border-radius: 10px;
 }
 .logoDiv {
-  display: flex;
-  align-items: center;
   transform: translateX(-12px);
 }
 .scrollable-element {
@@ -47,7 +45,9 @@
   ); /* red is for the thumb and yellow is for the track */
 }
 .logo {
-  width: 50px;
+  width: 120px;
+  display: block;
+  margin: auto;
 }
 .Menu h3 {
   color: #fff;
@@ -76,5 +76,10 @@
   width: 25px;
 }
 .MenuElement {
-  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  margin-left: 30px;
+  margin-top: 60px;
 }

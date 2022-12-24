@@ -1,35 +1,76 @@
 .Teams{
-    background-color: black;
+    width: 60vw;
+    height: 100%;
+    transform: translateX(18%);
+   
+
+}
+body:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: -10px;
     width: 100%;
     height: 100%;
-    color:white;
-
-}
+    opacity: 0.4;
+    background-image: url("/src/imgs/flash.svg");
+    z-index: -10;
+  }
 .group{
-    color:white;
-    font-size: 30px;
-    display: block;
-    margin-left: 30px;
-    margin-top: 30px;
-}
-.team{
-    background-color: white;
-    padding:20px;
-    border-radius: 5px;
-    color:black;
-    margin: 20px;
-}
-.Rows{
-    width: 200px;
-}
-table{
-    width: 100%;
-}
-th{
-    font-size: 20px;
-    padding-bottom: 30px;
-
-}
-td{
+    color:#560617;
+    padding: 20px 0;
     text-align: center;
+} 
+.team{
+    margin:auto;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: auto;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    background-color: white;
+}
+.styled-table thead tr {
+    background-color: #560617;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #ffffff;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #560617;
+}
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #560617;
+}
+@media only screen and (max-width: 800px) {
+    .Teams{
+       
+        transform: translateX(0);
+        
+    
+    }
+    .Teams h1{
+        transform: translateX(28%);
+    }
+    .styled-table {
+      padding: 20px;
+        
+    }
 }

@@ -34,10 +34,9 @@ function SideMenu() {
       <div className="Menu">
         <div className="logoDiv">
           <img className="logo" src={logo}></img>
-          <h3>Onesport</h3>
         </div>
         <div className="MenuElement">
-          <h6>Menu</h6>
+      
           <div
             onClick={() => {
               naviagate("/dashboard");

@@ -24,41 +24,45 @@ function Teams(props) {
       <div>
         <h1 className="group">Group {team.letter}</h1>
         <div className="team">
-          <table>
-            <tr>
-              <th>Team</th>
-              <th>Wins</th>
-              <th>Draws</th>
-              <th>Losses</th>
-              <th>Goals For</th>
-              <th>Goals Against</th>
-              <th>Points</th>
-            </tr>
+          <table className="styled-table">
+            <thead>
+              <tr>
+                <th>Team</th>
+                <th>Wins</th>
+                <th>Draws</th>
+                <th>Losses</th>
+                <th>Goals For</th>
+                <th>Goals Against</th>
+                <th>Points</th>
+              </tr>
+            </thead>
             {team.teams.map((team) => {
               return (
-                <tr className="Rows">
-                  <td>
-                    <h2>{team.name}</h2>
-                  </td>
-                  <td>
-                    <h2>{team.wins}</h2>
-                  </td>
-                  <td>
-                    <h2>{team.draws}</h2>
-                  </td>
-                  <td>
-                    <h2>{team.losses}</h2>
-                  </td>
-                  <td>
-                    <h2>{team.goals_for}</h2>
-                  </td>
-                  <td>
-                    <h2>{team.goals_against}</h2>
-                  </td>
-                  <td>
-                    <h2>{team.group_points}</h2>
-                  </td>
-                </tr>
+                <tbody>
+                  <tr className="Rows">
+                    <td>
+                      <h2>{team.name}</h2>
+                    </td>
+                    <td>
+                      <h2>{team.wins}</h2>
+                    </td>
+                    <td>
+                      <h2>{team.draws}</h2>
+                    </td>
+                    <td>
+                      <h2>{team.losses}</h2>
+                    </td>
+                    <td>
+                      <h2>{team.goals_for}</h2>
+                    </td>
+                    <td>
+                      <h2>{team.goals_against}</h2>
+                    </td>
+                    <td>
+                      <h2>{team.group_points}</h2>
+                    </td>
+                  </tr>
+                </tbody>
               );
             })}
           </table>
@@ -67,12 +71,7 @@ function Teams(props) {
     );
   });
 
-  return (
-    <div className="Teams">
-      <h1>Standings</h1>
-      {teamsList}
-    </div>
-  );
+  return <div className="Teams">{teamsList}</div>;
 }
 
 export default Teams;

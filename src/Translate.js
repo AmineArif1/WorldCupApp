@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import lang from "./LanguageList";
 function Translate() {
-  const [language, setLanguage] = useState("English");
+  const [language, setLanguage] = useState("en");
   const [text, setText] = useState("");
   const [translatedText, setTranslatedText] = useState("");
   useEffect(() => {
@@ -16,7 +16,7 @@ function Translate() {
       const encodedParams = new URLSearchParams();
       encodedParams.append("q", text);
       encodedParams.append("target", "ar");
-      encodedParams.append("source", "en");
+      encodedParams.append("source", language);
 
       const options = {
         method: "POST",
@@ -48,7 +48,6 @@ function Translate() {
   });
   return (
     <div id="Translate">
-     
       <div className="Container">
         <select
           onChange={(e) => {

@@ -1,11 +1,6 @@
 .hero {
   width: 758px;
   margin: 10px;
-
-  box-shadow: 0px 5px 15px 5px rgb(255 255 255 / 10%);
-  border-radius: 2%;
-  width: 758px;
-  margin: 10px;
   margin-left: 40px;
   box-shadow: 0px 5px 15px 5px rgb(255 255 255 / 10%);
   border-radius: 2%;
@@ -58,19 +53,17 @@ body {
   background-color: #ffffff;
   box-shadow: 0px 5px 15px 5px rgb(255 255 255 / 10%);
   border-radius: 3%;
+  padding-top: 13px;
 }
 .countryWeather {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color:#560617 ;
-  color:white;
+  background-color: #560617;
+  color: white;
   margin: 20px;
   padding: 0 20px;
   border-radius: 25px;
-
-
-
 }
 .imageSun {
 }
@@ -123,7 +116,7 @@ body {
   background-color: #323337;
 }
 .date {
-  color: gray !important;
+  color: white !important;
   font-weight: 300;
 }
 .originColorRow {
@@ -144,6 +137,12 @@ body {
   }
 }
 @media only screen and (max-width: 800px) {
+  .fr9a{
+    width: 55px;
+  }
+  .fr9aName{
+    display: none;
+  }
   .Menu {
     display: none;
   }
@@ -151,7 +150,8 @@ body {
     flex-direction: column;
   }
   .hero {
-    width: 95%;
+    width: 90%;
+    margin: 25px;
   }
   .weather {
     width: 100%;
@@ -176,6 +176,9 @@ body {
   }
 }
 @media only screen and (max-width: 644px) {
+  .Loop input {
+    width: 420px;
+  }
   .date {
     display: none;
   }
@@ -195,6 +198,9 @@ body {
     left: 20%;
     right: 20%;
     border: 1px white solid;
+  }
+  .fullTime {
+    display: none;
   }
 }
 .matches {

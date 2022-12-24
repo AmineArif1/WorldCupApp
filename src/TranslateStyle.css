@@ -19,7 +19,7 @@
   color: white;
 }
 #Translate textarea {
-  background-color: rgb(171 170 170 / 50%);
+  background-color: rgb(217 204 204);
   border: 2px solid white;
   width: 500px;
   height: 300px;
@@ -34,6 +34,7 @@
   align-items: center;
 }
 .leftRight {
+  background: #f8f8f8;
   width: 180px;
 }
 .Container {
@@ -52,24 +53,23 @@
   font-size: 20px;
 }
 @media only screen and (max-width: 800px) {
-    .Container {
-        width: 80vw;
-        margin-top: 100px;
-        margin-bottom:80px;
-    }
-    .textAreaDiv {
-        flex-direction: column;
-        margin-bottom: 100px;
-    }
-    .leftRight {
-        display: none;
-    }
-    #Translate textarea {
-        width: 100%;
-        margin-bottom: 100px;
-    }
-    #Translate:before {
-        background-repeat: ;
-
-      }
+  .Container {
+    width: 80vw;
+    margin-top: 100px;
+    margin-bottom: 80px;
+  }
+  .textAreaDiv {
+    flex-direction: column;
+    margin-bottom: 100px;
+  }
+  .leftRight {
+    display: none;
+  }
+  #Translate textarea {
+    width: 100%;
+    margin-bottom: 100px;
+  }
+  #Translate:before {
+    background-repeat: ;
+  }
 }
