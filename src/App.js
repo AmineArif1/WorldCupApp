@@ -3,22 +3,25 @@ import axios from "axios";
 import SideMenu from "./SideMenu.js";
 import Dashboard from "./Dashboard.js";
 import PhoneNav from "./PhoneNav.js";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import Translate from "./Translate.js";
 import Teams from "./Teams.js";
 
 function App() {
-
   return (
     <>
       <div className="flex" style={{ display: "flex" }}>
-
         <Router>
-        <SideMenu  />
+          <SideMenu />
           <Routes>
-            <Route  path="/dashboard" element={<Dashboard  />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/Translate" element={<Translate />} />
-            <Route path="/Teams" element={<Teams  />} />
+            <Route path="/Teams" element={<Teams />} />
             {/*<Route
               path="/favoris"
               element={
@@ -30,8 +33,8 @@ function App() {
             {/* /> */}
             {/* <Route path="/" element={<Main />} /> */}
           </Routes>
+          <PhoneNav />
         </Router>
-        <PhoneNav />
       </div>
     </>
   );

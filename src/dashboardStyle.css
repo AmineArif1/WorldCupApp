@@ -32,13 +32,14 @@
   width: 500px;
   height: 40px;
   border-radius: 5px;
-  color: white;
+  color: #560617;
   padding-left: 50px;
   font-size: 18px;
+  margin-left: 26px;
 }
 .loop {
   position: absolute;
-  left: 22px;
+  left: 59px;
   top: 26px;
   scale: 1.5;
 }
@@ -126,7 +127,7 @@ body {
   font-weight: 300;
 }
 .originColorRow {
-  background-color: #212227;
+  background-color: #12172d;
 }
 .phoneNav {
   display: none;
@@ -164,7 +165,7 @@ body {
     position: fixed;
     height: 75px;
     gap: 20px;
-    background-color: #1b1c21;
+    background-color: #560617;
     padding: 20px;
     border-radius: 20px;
     bottom: 20px;
@@ -187,7 +188,6 @@ body {
     position: fixed;
     height: 75px;
     gap: 20px;
-    background-color: #1b1c21;
     padding: 20px;
     border-radius: 20px;
     bottom: 20px;

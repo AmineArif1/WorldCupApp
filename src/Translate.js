@@ -1,5 +1,5 @@
 import "./TranslateStyle.css";
-import leftRight from "./imgs/leftRightArrow.png";
+import leftRight from "./imgs/leftRight.png";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import lang from "./LanguageList";
@@ -48,9 +48,7 @@ function Translate() {
   });
   return (
     <div id="Translate">
-      <div id="Translate-Title">
-        <h1>Translate</h1>
-      </div>
+     
       <div className="Container">
         <select
           onChange={(e) => {
