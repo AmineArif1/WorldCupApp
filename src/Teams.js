@@ -9,20 +9,21 @@ function Teams(props) {
   useEffect(() => {
     axios({
       method: "GET",
-      url: "https://worldcupjson.net/teams",
+      url: "http://127.0.0.1:8787/",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
     }).then((response) => {
-      setTeams(response.data.groups);
+      setTeams(response.data);
+      console.log(response.data);
     });
   }, []);
 
   var teamsList = teams.map((team) => {
     return (
       <div>
-        <h1 className="group">Group {team.letter}</h1>
+        <h1 className="group">Group {team.group}</h1>
         <div className="team">
           <table className="styled-table">
             <thead>
@@ -41,25 +42,25 @@ function Teams(props) {
                 <tbody>
                   <tr className="Rows">
                     <td>
-                      <h2>{team.name}</h2>
+                      <h2>{team.name_en}</h2>
                     </td>
                     <td>
-                      <h2>{team.wins}</h2>
+                      <h2>{team.w}</h2>
                     </td>
                     <td>
-                      <h2>{team.draws}</h2>
+                      <h2>{team.d}</h2>
                     </td>
                     <td>
-                      <h2>{team.losses}</h2>
+                      <h2>{team.l}</h2>
                     </td>
                     <td>
-                      <h2>{team.goals_for}</h2>
+                      <h2>{team.gf}</h2>
                     </td>
                     <td>
-                      <h2>{team.goals_against}</h2>
+                      <h2>{team.ga}</h2>
                     </td>
                     <td>
-                      <h2>{team.group_points}</h2>
+                      <h2>{team.pts}</h2>
                     </td>
                   </tr>
                 </tbody>

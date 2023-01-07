@@ -1,10 +1,12 @@
 import hero from "./imgs/hero.svg";
+import hero2 from "./imgs/hero2.jpg";
 import "./dashboardStyle.css";
 import Loop from "./Loop.js";
-import sun from "./imgs/weather.png";
+import SimpleImageSlider from "react-simple-image-slider";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import MatchRow from "./MatchRow.js";
+import "react-slideshow-image/dist/styles.css";
 function Dashboard() {
   let [weatherDubai, setWeatherDubai] = useState(null);
   let [weatherCasa, setWeatherCasa] = useState(null);
@@ -18,6 +20,10 @@ function Dashboard() {
   let [weatherImageParis, setWeatherImageParis] = useState(null);
   let [matches, setMatches] = useState([]);
 
+  const images = [
+    { url: hero, alt: "hero" },
+    { url: hero2, alt: "hero" },
+  ];
   useEffect(() => {
     axios
       .get(
@@ -45,7 +51,7 @@ function Dashboard() {
         setError(error);
         setLoading(true);
       });
-      axios
+    axios
       .get(
         "http://api.weatherapi.com/v1/current.json?key=c943211fe5144993947183757221612&q=London&aqi=no"
       )
@@ -58,7 +64,7 @@ function Dashboard() {
         setError(error);
         setLoading(true);
       });
-      axios
+    axios
       .get(
         "http://api.weatherapi.com/v1/current.json?key=c943211fe5144993947183757221612&q=Paris&aqi=no"
       )
@@ -72,8 +78,8 @@ function Dashboard() {
         setLoading(true);
       });
     axios({
-      method: "get",
-      url: "https://worldcupjson.net/matches/",
+      method: "GET",
+      url: "https://workers.elarifamine1.workers.dev/",
       header: {},
     }).then((response) => {
       console.log(response.data);
@@ -83,22 +89,22 @@ function Dashboard() {
   let key = 0;
   let match = matches.map((match) => {
     if (
-      match.away_team.name == "England" ||
-      match.home_team.name == "England" ||
-      match.home_team.name == "Wales" ||
-      match.away_team.name == "Wales" ||
-      match.home_team.name == "Tunisia" ||
-      match.away_team.name == "Tunisia" ||
-      match.home_team.name == "Saudi Arabia" ||
-      match.away_team.name == "Saudi Arabia" ||
-      match.home_team.name == "Poland" ||
-      match.away_team.name == "Poland" ||
-      match.home_team.name == "Korea Republic" ||
-      match.away_team.name == "Korea Republic" ||
-      match.home_team.name == "Switzerland" ||
-      match.away_team.name == "Switzerland" ||
-      match.home_team.name == "Portugal" ||
-      match.away_team.name == "Portugal"
+      match.awayTeam.name == "England" ||
+      match.homeTeam.name == "England" ||
+      match.homeTeam.name == "Wales" ||
+      match.awayTeam.name == "Wales" ||
+      match.homeTeam.name == "Tunisia" ||
+      match.awayTeam.name == "Tunisia" ||
+      match.homeTeam.name == "Saudi Arabia" ||
+      match.awayTeam.name == "Saudi Arabia" ||
+      match.homeTeam.name == "Poland" ||
+      match.awayTeam.name == "Poland" ||
+      match.homeTeam.name == "Korea Republic" ||
+      match.awayTeam.name == "Korea Republic" ||
+      match.homeTeam.name == "Switzerland" ||
+      match.awayTeam.name == "Switzerland" ||
+      match.homeTeam.name == "Portugal" ||
+      match.awayTeam.name == "Portugal"
     ) {
       return;
     }
@@ -106,15 +112,15 @@ function Dashboard() {
 
     return (
       <MatchRow
-        awayT={match.away_team.name}
-        homeT={match.home_team.name}
-        score={match.home_team.goals + " - " + match.away_team.goals}
+        awayT={match.awayTeam.name}
+        homeT={match.homeTeam.name}
+        score={match.homeTeam.goals + " - " + match.awayTeam.goals}
         pair={key}
-        time={match.datetime.split("T")[0]}
-        flag1={`https://flagcdn.com/48x36/${match.away_team.country
+        time={match.date.split("T")[0]}
+        flag1={`https://flagcdn.com/48x36/${match.awayTeam.country
           .toLowerCase()
           .substring(0, 2)}.png`}
-        flag2={`https://flagcdn.com/48x36/${match.home_team.country
+        flag2={`https://flagcdn.com/48x36/${match.homeTeam.country
           .toLowerCase()
           .substring(0, 2)}.png`}
       />
@@ -125,7 +131,19 @@ function Dashboard() {
       <div className="dashboard">
         <Loop />
         <div className="flexHero">
-          <img className="hero" src={hero}></img>
+          <div className="hero">
+            <SimpleImageSlider
+              width={758}
+              height={380}
+              images={images}
+              showBullets={true}
+              showNavs={true}
+              slideDuration={0.5}
+              loop={true}
+              autoPlay={true}
+            />
+          </div>
+          {/* <img className="hero" src={hero}></img> */}
           <div className="weather">
             <div className="countryWeather">
               <img className="imageSun" src={weatherImage} alt="" />

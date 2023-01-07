@@ -36,7 +36,6 @@ function SideMenu() {
           <img className="logo" src={logo}></img>
         </div>
         <div className="MenuElement">
-      
           <div
             onClick={() => {
               naviagate("/dashboard");
@@ -77,6 +76,8 @@ function SideMenu() {
             />
           </div>
         </div>
+        <div className="line"></div>
+        
       </div>
     </>
   );

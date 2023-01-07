@@ -11,7 +11,7 @@ import {
 } from "react-router-dom";
 import Translate from "./Translate.js";
 import Teams from "./Teams.js";
-
+import TeamOne from './TeamOne.js';
 function App() {
   return (
     <>
@@ -22,6 +22,8 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/Translate" element={<Translate />} />
             <Route path="/Teams" element={<Teams />} />
+            <Route path="/search/:teamName" element={<TeamOne />} />
+
             {/*<Route
               path="/favoris"
               element={
