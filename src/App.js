@@ -24,16 +24,7 @@ function App() {
             <Route path="/Teams" element={<Teams />} />
             <Route path="/search/:teamName" element={<TeamOne />} />
 
-            {/*<Route
-              path="/favoris"
-              element={
-                <Favoris
-                  preference={preference}
-                  setPreference={setPreference}
-                /> */}
-            {/* } */}
-            {/* /> */}
-            {/* <Route path="/" element={<Main />} /> */}
+    
           </Routes>
           <PhoneNav />
         </Router>

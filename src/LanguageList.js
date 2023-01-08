@@ -1,4 +1,5 @@
 var lang = [
+  { auto: "Auto Detect" },
   {
     en: "English",
   },
@@ -12,5 +13,6 @@ var lang = [
   { pt: "Portuguese" },
   { ru: "Russian" },
   { es: "Spanish" },
+  
 ];
 export default lang;

@@ -9,7 +9,7 @@ function Teams(props) {
   useEffect(() => {
     axios({
       method: "GET",
-      url: "http://127.0.0.1:8787/",
+      url: "https://workerteamwc.elarifamine1.workers.dev/",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
