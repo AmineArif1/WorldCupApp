@@ -116,6 +116,12 @@ body {
   padding: 5px 10px 5px 10px;
   border-radius: 10px;
 }
+.hero div {
+  width: 100%;
+}
+.hero div div {
+  width: 100%;
+}
 .fullTime {
   padding: 5px 10px 5px 10px;
   border-radius: 10px;
@@ -158,6 +164,15 @@ body {
   .hero {
     width: 90%;
     margin: 25px;
+  }
+  .hero div {
+    width: 99% !important;
+  }
+  .hero div div {
+    width: 97% !important;
+  }
+  .rsis-image {
+    width: 20%;
   }
   .weather {
     width: 100%;
@@ -214,4 +229,14 @@ body {
   margin: 40px;
   padding: 10px;
   border-radius: 10px;
+}
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: var(--red);
+  transform-origin: 0%;
 }

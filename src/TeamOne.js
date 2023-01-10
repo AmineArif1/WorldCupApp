@@ -1,7 +1,9 @@
+import { useParams } from "react-router";
+
 function TeamOne() {
-    return ( <>
-    
-    </> );
+  const { teamName } = useParams();
+  
+  return <>{teamName}</>;
 }
 
 export default TeamOne;

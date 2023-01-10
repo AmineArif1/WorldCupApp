@@ -38,7 +38,7 @@ function SideMenu() {
         <div className="MenuElement">
           <div
             onClick={() => {
-              naviagate("/dashboard");
+              naviagate("/");
               setDashboard(true);
               setOthersFalse(setDashboard);
             }}
@@ -77,7 +77,6 @@ function SideMenu() {
           </div>
         </div>
         <div className="line"></div>
-        
       </div>
     </>
   );

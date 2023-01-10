@@ -7,6 +7,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import MatchRow from "./MatchRow.js";
 import "react-slideshow-image/dist/styles.css";
+import { motion } from "framer-motion";
+
 function Dashboard() {
   let [weatherDubai, setWeatherDubai] = useState(null);
   let [weatherCasa, setWeatherCasa] = useState(null);

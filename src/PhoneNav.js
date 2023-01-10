@@ -34,7 +34,7 @@ function PhoneNav() {
       <div className="phoneNav">
         <img
           onClick={() => {
-            naviagate("/dashboard");
+            naviagate("/");
             setDashboard(true);
             setOthersFalse(setDashboard);
           }}
