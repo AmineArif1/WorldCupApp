@@ -14,15 +14,19 @@ import Translate from "./Translate.js";
 import Teams from "./Teams.js";
 import TeamOne from "./TeamOne.js";
 function App() {
+  var [sideBar, setSideBar] = useState(false);
   return (
     <>
       <div className="flex" style={{ display: "flex" }}>
         <Router>
-          <SideMenu />
+          <SideMenu sideBar={sideBar} setSideBar={setSideBar} />
           <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/Translate" element={<Translate />} />
-            <Route path="/Teams" element={<Teams />} />
+            <Route
+              path="/"
+              element={<Dashboard sideBar={sideBar} setSideBar={setSideBar} />}
+            />
+            <Route path="/Translate/:preTranslate" element={<Translate  sideBar={sideBar} setSideBar={setSideBar} />} />
+            <Route path="/Teams" element={<Teams  sideBar={sideBar} setSideBar={setSideBar} />} />
             <Route path="/search/:teamName" element={<TeamOne />} />
           </Routes>
           <PhoneNav />

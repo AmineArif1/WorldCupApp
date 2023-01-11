@@ -4,12 +4,14 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import lang from "./LanguageList";
 import { Circles } from "react-loader-spinner";
-
-function Translate() {
+import { useParams } from "react-router";
+import Loop from "./Loop";
+function Translate(props) {
   const [language, setLanguage] = useState("auto");
   const [translatedText, setTranslatedText] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(false);
+  const { preTranslate } = useParams();
 
   useEffect(() => {
     const delayDebounceFn = setTimeout(() => {
@@ -47,7 +49,11 @@ function Translate() {
     console.log(language);
     console.log(searchTerm);
   }, [language, searchTerm]);
-
+  useEffect(() => {
+    if (preTranslate) {
+      setSearchTerm(preTranslate);
+    }
+  }, []);
   useEffect(() => {}, [searchTerm]);
   let langList = lang.map((value) => {
     return (
@@ -56,51 +62,55 @@ function Translate() {
   });
 
   return (
-    <div id="Translate">
-      <div className="Container">
-        <select
-          onChange={(e) => {
-            setLanguage(e.target.value);
-          }}
-          className="selectLang"
-        >
-          {langList}
-        </select>
-
-        <div className="textAreaDiv">
-          <textarea
+    <>
+      <Loop sideBar={props.sideBar} setSideBar={props.setSideBar} />
+      <div id="Translate">
+        <div className="Container">
+          <select
             onChange={(e) => {
-              setSearchTerm(e.target.value);
+              setLanguage(e.target.value);
             }}
-            name=""
-            id=""
-            cols="30"
-            rows="10"
-          ></textarea>
-          {loading ? (
-            <Circles
-              className="leftRight"
-              height="80"
-              width="80"
-              color="#560617"
-              ariaLabel="circles-loading"
-              wrapperStyle={{}}
-              wrapperClass=""
-              visible={true}
-            />
-          ) : (
-            <img className="leftRight" src={leftRight} alt="" />
-          )}
-          <textarea
-            value={translatedText}
-            name=""
-            id=""
-            cols="30"
-            rows="10"
-          ></textarea>
+            className="selectLang"
+          >
+            {langList}
+          </select>
+
+          <div className="textAreaDiv">
+            <textarea
+              value={searchTerm}
+              onChange={(e) => {
+                setSearchTerm(e.target.value);
+              }}
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+            ></textarea>
+            {loading ? (
+              <Circles
+                className="leftRight"
+                height="80"
+                width="80"
+                color="#560617"
+                ariaLabel="circles-loading"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible={true}
+              />
+            ) : (
+              <img className="leftRight" src={leftRight} alt="" />
+            )}
+            <textarea
+              value={translatedText}
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+            ></textarea>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

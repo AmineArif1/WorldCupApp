@@ -18,7 +18,6 @@
 .Loop {
   position: relative;
   padding: 15px;
-
   background: linear-gradient(
     86deg,
     rgba(86, 6, 23, 1) 12%,
@@ -27,20 +26,38 @@
   );
   border-bottom: 0.5px solid gray;
 }
+
 .inputLoop {
   background-color: white;
   border: 0px;
-  width: 500px;
+  width: 742px;
   height: 40px;
   border-radius: 5px;
   color: #560617;
   padding-left: 50px;
   font-size: 18px;
-  margin-left: 26px;
+  margin-left: 347px;
+}
+.inputLoopTwo {
+  background-color: white;
+  border: 0px;
+  width: 722px;
+  height: 40px;
+  border-radius: 5px;
+  color: #560617;
+  padding-left: 50px;
+  font-size: 18px;
+  margin-left: 262px;
 }
 .loop {
   position: absolute;
-  left: 59px;
+  left: 376px;
+  top: 26px;
+  scale: 1.5;
+}
+.LoopTwo {
+  position: absolute;
+  left: 295px;
   top: 26px;
   scale: 1.5;
 }
@@ -53,6 +70,15 @@ body {
   flex-wrap: wrap;
 }
 .weather {
+  width: 23%;
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 3%;
+  padding-top: 13px;
+}
+.weatherold {
   width: 33%;
   margin-top: 10px;
   border-radius: 10px;
@@ -137,6 +163,22 @@ body {
 .phoneNav {
   display: none;
 }
+.menu-bars {
+  position: absolute;
+  font-size: 40px;
+  top: 14px;
+  left: 38px;
+  color: white;
+  z-index: 99999;
+}
+.menu-bars-Crois {
+  position: absolute;
+  font-size: 40px;
+  top: 14px;
+  left: 231px;
+  color: white;
+  z-index: 99999;
+}
 @media only screen and (max-width: 1200px) {
   .hero {
     width: 100%;
@@ -148,6 +190,7 @@ body {
     width: 100%;
   }
 }
+
 @media only screen and (max-width: 800px) {
   .fr9a {
     width: 55px;
@@ -240,3 +283,109 @@ body {
   background: var(--red);
   transform-origin: 0%;
 }
+.dead {
+  display: none;
+}
+/* start flip card */
+.card h1 {
+  font-family: "Indie Flower", cursive;
+  color: #12172d;
+}
+.wrapper {
+  height: 400px;
+  width: 320px;
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+.wrapper .card {
+  position: absolute;
+  height: 98%;
+  width: 100%;
+  padding: 23px;
+  background: white;
+  border-radius: 10px;
+  transform: translateY(0deg);
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  margin-top: 10px;
+}
+.wrapper h1 {
+  color: #560617;
+}
+.wrapper:hover > .front-face {
+  transform: rotateY(-180deg);
+}
+.wrapper .card img {
+  height: 68%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+}
+.wrapper .back-face {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  transform: rotateY(180deg);
+}
+.back-face span {
+  font-family: "Indie Flower", cursive;
+  font-size: 25px;
+  color: #560617;
+  font-weight: 900;
+}
+.wrapper:hover > .back-face {
+  transform: rotateY(0deg);
+}
+.wrapper .back-face img {
+  height: 150px;
+  width: 150px;
+  padding: 5px;
+  border-radius: 50%;
+  background: linear-gradient(
+    var(--gradient-angle-degree),
+    var(--gradient-color-1),
+    var(--gradient-color-2)
+  );
+}
+.wrapper .back-face .info {
+  text-align: center;
+}
+.back-face .info .title {
+  font-size: 30px;
+  font-weight: 500;
+}
+.back-face ul {
+  display: flex;
+}
+.back-face ul a {
+  display: block;
+  height: 40px;
+  width: 40px;
+  color: var(--back-face-social-media-icon-color);
+  text-align: center;
+  margin: 0 5px;
+  line-height: 38px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background: linear-gradient(
+    var(--gradient-angle-degree),
+    var(--gradient-color-1),
+    var(--gradient-color-2)
+  );
+  transition: all 0.5s ease;
+}
+.back-face ul a:hover {
+  color: var(--gradient-color-1);
+  border-color: var(--card-border-color);
+  background: linear-gradient(
+    var(--gradient-angle-degree),
+    transparent,
+    transparent
+  );
+}
+/* end flip card */

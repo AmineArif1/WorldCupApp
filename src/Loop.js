@@ -2,7 +2,7 @@ import loop from "./imgs/Loop.svg";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-function Loop() {
+function Loop(props) {
   const naviagate = useNavigate();
   let [search, setSearch] = useState("");
 
@@ -18,9 +18,13 @@ function Loop() {
           }}
           placeholder="Hello! , which team are you looking for ?"
           type="text"
-          className="inputLoop"
+          className={!props.sideBar ? "inputLoop" : "inputLoopTwo"}
         />
-        <img className="loop" src={loop} alt="" />
+        <img
+          className={!props.sideBar ? "loop" : "loopTwo"}
+          src={loop}
+          alt=""
+        />
       </div>
     </>
   );

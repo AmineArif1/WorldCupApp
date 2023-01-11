@@ -8,8 +8,9 @@ import { useEffect, useState } from "react";
 import MatchRow from "./MatchRow.js";
 import "react-slideshow-image/dist/styles.css";
 import { motion } from "framer-motion";
-
-function Dashboard() {
+import factsImage from "./imgs/facts.PNG";
+import { useNavigate } from "react-router-dom";
+function Dashboard(props) {
   let [weatherDubai, setWeatherDubai] = useState(null);
   let [weatherCasa, setWeatherCasa] = useState(null);
   let [loading, setLoading] = useState(false);
@@ -21,7 +22,9 @@ function Dashboard() {
   let [weatherImageLondon, setWeatherImageLondon] = useState(null);
   let [weatherImageParis, setWeatherImageParis] = useState(null);
   let [matches, setMatches] = useState([]);
+  let [fact, setFact] = useState(null);
 
+  const navigate = useNavigate();
   const images = [
     { url: hero, alt: "hero" },
     { url: hero2, alt: "hero" },
@@ -131,7 +134,7 @@ function Dashboard() {
   return (
     <>
       <div className="dashboard">
-        <Loop />
+        <Loop sideBar={props.sideBar} setSideBar={props.setSideBar} />
         <div className="flexHero">
           <div className="hero">
             <SimpleImageSlider
@@ -146,7 +149,7 @@ function Dashboard() {
             />
           </div>
           {/* <img className="hero" src={hero}></img> */}
-          <div className="weather">
+          <div className={!props.sideBar ? "weather" : "weatherold"}>
             <div className="countryWeather">
               <img className="imageSun" src={weatherImage} alt="" />
               <p>{weatherDubai} C</p>
@@ -166,6 +169,35 @@ function Dashboard() {
               <img className="imageSun" src={weatherImageLondon} alt="" />
               <p>{weatherLondon} C</p>
               <p>In London</p>
+            </div>
+          </div>
+          <div
+            className={!props.sideBar ? "wrapper" : "dead"}
+            onMouseEnter={() => {
+              axios
+                .get("https://worldcupfunfact.elarifamine1.workers.dev")
+                .then((response) => {
+                  console.log(response.data);
+                  setFact(response.data);
+                  document.querySelector(".back-face > span").innerHTML =
+                    response.data;
+                });
+            }}
+          >
+            <div class="card front-face">
+              <h1>Hover over me for a world cup fun fact!</h1>
+              <img src={factsImage}></img>
+            </div>
+            <div class="card back-face">
+              <span></span>
+              <button
+                onClick={() => {
+                  console.log(fact);
+                  navigate(`/Translate/${fact}`);
+                }}
+              >
+                Translate this fact to arabic!
+              </button>
             </div>
           </div>
         </div>

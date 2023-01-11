@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "./Teams.css";
 import { useLocation } from "react-router-dom";
+import Loop from "./Loop";
 
 function Teams(props) {
   var [teams, setTeams] = useState([]);
@@ -23,6 +24,7 @@ function Teams(props) {
   var teamsList = teams.map((team) => {
     return (
       <div>
+        <Loop sideBar={props.sideBar} setSideBar={props.setSideBar} />
         <h1 className="group">Group {team.group}</h1>
         <div className="team">
           <table className="styled-table">
