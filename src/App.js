@@ -21,12 +21,9 @@ function App() {
         <Router>
           <SideMenu sideBar={sideBar} setSideBar={setSideBar} />
           <Routes>
-            <Route
-              path="/"
-              element={<Dashboard sideBar={sideBar} setSideBar={setSideBar} />}
-            />
-            <Route path="/Translate/:preTranslate" element={<Translate  sideBar={sideBar} setSideBar={setSideBar} />} />
-            <Route path="/Teams" element={<Teams  sideBar={sideBar} setSideBar={setSideBar} />} />
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/Translate/:preTranslate" element={<Translate />} />
+            <Route path="/Teams" element={<Teams />} />
             <Route path="/search/:teamName" element={<TeamOne />} />
           </Routes>
           <PhoneNav />

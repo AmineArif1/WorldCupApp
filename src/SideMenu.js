@@ -5,15 +5,17 @@ import dashboardYellow from "./imgs/dashboardYellow.svg";
 import dashboardWhite from "./imgs/dashboardWhite.svg";
 import translateLogo from "./imgs/translateLogo.png";
 import teamsWhite from "./imgs/teamsWhite.png";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import yellowTranslate from "./imgs/yellowTranslate.png";
 import teamsYellow from "./imgs/teamsYellow.png";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { Link } from "react-router-dom";
+import autoAnimate from "@formkit/auto-animate";
 
 function SideMenu(props) {
+  const parentRef = useRef(null);
   const naviagate = useNavigate();
   var [dashboardB, setDashboard] = useState(true);
   var [translateB, setTranslate] = useState(false);
@@ -27,12 +29,39 @@ function SideMenu(props) {
       }
     });
   }
+  function useOutsideAlerter(ref) {
+    useEffect(() => {
+      /**
+       * Alert if clicked on outside of element
+       */
+      function handleClickOutside(event) {
+        if (ref.current && !ref.current.contains(event.target)) {
+          props.setSideBar(false);
+        }
+      }
+      // Bind the event listener
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        // Unbind the event listener on clean up
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, [ref]);
+  }
+  useEffect(() => {
+    if (parentRef.current) {
+      autoAnimate(parentRef.current);
+    }
+  }, [parentRef]);
   useEffect(() => {
     console.log(dashboardB);
     console.log(translateB);
     console.log(teamsB);
   }, [dashboardB, translateB, teamsB]);
-
+  useEffect(() => {
+    console.log(props.sideBar);
+  }, [props.sideBar]);
+  const wrapperRef = useRef(null);
+  useOutsideAlerter(wrapperRef);
   return (
     <>
       <div className={"menuIcon"}>
@@ -49,7 +78,7 @@ function SideMenu(props) {
           )}
         </Link>
       </div>
-      <div className={props.sideBar ? "Menu" : "dead"}>
+      <div ref={wrapperRef} className={props.sideBar ? "Menu" : "dead"}>
         <div>
           <div className="logoDiv">
             <img className="logo" src={logo}></img>

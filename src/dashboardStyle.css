@@ -16,7 +16,7 @@
   width: 100%;
 }
 .Loop {
-  position: relative;
+  position: sticky;
   padding: 15px;
   background: linear-gradient(
     86deg,
@@ -169,15 +169,15 @@ body {
   top: 14px;
   left: 38px;
   color: white;
-  z-index: 99999;
+  z-index: 100002;
 }
 .menu-bars-Crois {
-  position: absolute;
+  position: fixed;
   font-size: 40px;
   top: 14px;
   left: 231px;
   color: white;
-  z-index: 99999;
+  z-index: 100002;
 }
 @media only screen and (max-width: 1200px) {
   .hero {
@@ -284,7 +284,8 @@ body {
   transform-origin: 0%;
 }
 .dead {
-  display: none;
+  visibility: hidden;
+  width: 0;
 }
 /* start flip card */
 .card h1 {

@@ -11,11 +11,21 @@
     rgba(86, 6, 23, 1) 58%,
     rgba(222, 83, 83, 1) 100%
   );
-  width: 350px;
-  position: sticky;
+  width: 284px;
+  position: fixed !important;
   min-height: 100vh;
   padding: 40px 0 0 20px;
   border-right: 0.5px gray solid;
+  transition: all 0.35s ease-in-out;
+  z-index: 100000;
+}
+@-prefix-keyframes slide {
+  from {
+    width: 0;
+  }
+  to {
+    width: 350px;
+  }
 }
 /* width */
 ::-webkit-scrollbar {
@@ -78,7 +88,7 @@
 .MenuElement {
   display: flex;
   flex-direction: column;
-
+  cursor: pointer;
   justify-content: center;
   margin-left: 30px;
   margin-top: 60px;

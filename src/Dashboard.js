@@ -4,12 +4,14 @@ import "./dashboardStyle.css";
 import Loop from "./Loop.js";
 import SimpleImageSlider from "react-simple-image-slider";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import MatchRow from "./MatchRow.js";
 import "react-slideshow-image/dist/styles.css";
 import { motion } from "framer-motion";
 import factsImage from "./imgs/facts.PNG";
 import { useNavigate } from "react-router-dom";
+import autoAnimate from "@formkit/auto-animate";
+
 function Dashboard(props) {
   let [weatherDubai, setWeatherDubai] = useState(null);
   let [weatherCasa, setWeatherCasa] = useState(null);
@@ -24,7 +26,9 @@ function Dashboard(props) {
   let [matches, setMatches] = useState([]);
   let [fact, setFact] = useState(null);
 
+
   const navigate = useNavigate();
+  
   const images = [
     { url: hero, alt: "hero" },
     { url: hero2, alt: "hero" },
