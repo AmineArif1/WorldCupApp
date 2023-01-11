@@ -47,6 +47,7 @@ function SideMenu(props) {
       };
     }, [ref]);
   }
+
   useEffect(() => {
     if (parentRef.current) {
       autoAnimate(parentRef.current);

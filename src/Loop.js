@@ -2,6 +2,7 @@ import loop from "./imgs/Loop.svg";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import smallLogo from "./imgs/smallLogo.png";
 
 function Loop(props) {
   const location = useLocation();
@@ -11,12 +12,15 @@ function Loop(props) {
   return (
     <>
       <div className="Loop">
+        <img className="smallLogo" src={smallLogo} alt="logo" />
         <input
+          ref={props.reference}
           onChange={(e) => {
-            setSearch(e.target.value);
+            props.setSearch(e.target.value);
           }}
-          onKeyDown={(e) => {
-            e.key === "Enter" && naviagate("/search/" + search);
+          onClick={() => {
+            naviagate("/");
+            props.topLayer(false);
           }}
           placeholder="Hello! , which team are you looking for ?"
           type="text"

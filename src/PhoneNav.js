@@ -43,7 +43,7 @@ function PhoneNav() {
         ></img>
         <img
           onClick={() => {
-            naviagate("/translate");
+            naviagate("/translate/welcome");
             setTranslate(true);
             setOthersFalse(setTranslate);
           }}

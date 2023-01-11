@@ -7,6 +7,7 @@
 }
 .hero div {
   border-radius: 2%;
+  height: 391px !important;
 }
 .rsis-image {
   border-radius: 2%;
@@ -26,7 +27,13 @@
   );
   border-bottom: 0.5px solid gray;
 }
-
+.smallLogo {
+  width: 22px;
+  scale: 5;
+  position: absolute;
+  left: 115px;
+  top: 28px;
+}
 .inputLoop {
   background-color: white;
   border: 0px;
@@ -36,7 +43,7 @@
   color: #560617;
   padding-left: 50px;
   font-size: 18px;
-  margin-left: 347px;
+  margin-left: 167px;
 }
 .inputLoopTwo {
   background-color: white;
@@ -51,7 +58,7 @@
 }
 .loop {
   position: absolute;
-  left: 376px;
+  left: 200px;
   top: 26px;
   scale: 1.5;
 }
@@ -143,7 +150,6 @@ body {
   border-radius: 10px;
 }
 .hero div {
-  width: 100%;
 }
 .hero div div {
   width: 100%;
@@ -179,6 +185,15 @@ body {
   color: white;
   z-index: 100002;
 }
+.back-face button {
+  padding: 10px;
+  font-size: 20px;
+  border: 0;
+  background-color: #12172d;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
 @media only screen and (max-width: 1200px) {
   .hero {
     width: 100%;
@@ -192,6 +207,24 @@ body {
 }
 
 @media only screen and (max-width: 800px) {
+  .hero {
+    display: none;
+  }
+  .wrapper {
+    display: none;
+  }
+  .loop {
+    left: 90px;
+  }
+  .inputLoop {
+    margin-left: 60px;
+  }
+  .menu-bars {
+    display: none;
+  }
+  .menu-bars-Crois {
+    display: none;
+  }
   .fr9a {
     width: 55px;
   }
@@ -209,11 +242,9 @@ body {
     margin: 25px;
   }
   .hero div {
-    width: 99% !important;
-  }
-  .hero div div {
     width: 97% !important;
   }
+
   .rsis-image {
     width: 20%;
   }
@@ -238,10 +269,16 @@ body {
     right: 20%;
     border: 1px white solid;
   }
+  .matches {
+    margin: 10px 0px !important;
+  }
+  .smallLogo {
+    left: 32px;
+  }
 }
 @media only screen and (max-width: 644px) {
   .Loop input {
-    width: 420px;
+    width: 388px;
   }
   .date {
     display: none;
@@ -269,7 +306,7 @@ body {
 }
 .matches {
   background-color: white;
-  margin: 40px;
+  margin: 37px;
   padding: 10px;
   border-radius: 10px;
 }

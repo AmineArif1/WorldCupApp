@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 import factsImage from "./imgs/facts.PNG";
 import { useNavigate } from "react-router-dom";
 import autoAnimate from "@formkit/auto-animate";
+import SpringIn from "./SpringIn";
 
 function Dashboard(props) {
   let [weatherDubai, setWeatherDubai] = useState(null);
@@ -24,15 +25,37 @@ function Dashboard(props) {
   let [weatherImageLondon, setWeatherImageLondon] = useState(null);
   let [weatherImageParis, setWeatherImageParis] = useState(null);
   let [matches, setMatches] = useState([]);
+  let [topLayer, setTopLayer] = useState();
   let [fact, setFact] = useState(null);
-
-
+  let [search, setSearch] = useState(null);
   const navigate = useNavigate();
-  
+
   const images = [
     { url: hero, alt: "hero" },
     { url: hero2, alt: "hero" },
   ];
+  function useOutsideAlerter(ref) {
+    useEffect(() => {
+      /**
+       * Alert if clicked on outside of element
+       */
+      function handleClickOutside(event) {
+        if (ref.current && !ref.current.contains(event.target)) {
+          setTopLayer(true);
+          setSearch(null);
+        }
+      }
+      // Bind the event listener
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        // Unbind the event listener on clean up
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, [ref]);
+  }
+  const loopRef = useRef(null);
+  useOutsideAlerter(loopRef);
+
   useEffect(() => {
     axios
       .get(
@@ -117,6 +140,15 @@ function Dashboard(props) {
     ) {
       return;
     }
+    console.log(search === null);
+    if (
+      search != null &&
+      match.awayTeam.name != search &&
+      match.homeTeam.name != search
+    ) {
+      console.log("AAAAAAAAAAAAAAAAAAAAAAA");
+      return;
+    }
     key = key + 1;
 
     return (
@@ -135,80 +167,110 @@ function Dashboard(props) {
       />
     );
   });
+
   return (
     <>
       <div className="dashboard">
-        <Loop sideBar={props.sideBar} setSideBar={props.setSideBar} />
+        <SpringIn>
+          <Loop
+            setSearch={setSearch}
+            reference={loopRef}
+            topLayer={setTopLayer}
+            sideBar={props.sideBar}
+            setSideBar={props.setSideBar}
+          />
+        </SpringIn>
+
         <div className="flexHero">
-          <div className="hero">
-            <SimpleImageSlider
-              width={758}
-              height={380}
-              images={images}
-              showBullets={true}
-              showNavs={true}
-              slideDuration={0.5}
-              loop={true}
-              autoPlay={true}
-            />
-          </div>
+          {topLayer && (
+            <SpringIn>
+              <div className="hero">
+                <SimpleImageSlider
+                  width={758}
+                  height={380}
+                  images={images}
+                  showBullets={false}
+                  showNavs={true}
+                  slideDuration={0.5}
+                  loop={true}
+                  autoPlay={true}
+                />
+              </div>
+            </SpringIn>
+          )}
           {/* <img className="hero" src={hero}></img> */}
-          <div className={!props.sideBar ? "weather" : "weatherold"}>
-            <div className="countryWeather">
-              <img className="imageSun" src={weatherImage} alt="" />
-              <p>{weatherDubai} C</p>
-              <p>In Dubai</p>
-            </div>
-            <div className="countryWeather">
-              <img className="imageSun" src={weatherImageCasa} alt="" />
-              <p>{weatherCasa} C</p>
-              <p>In Casablanca</p>
-            </div>
-            <div className="countryWeather">
-              <img className="imageSun" src={weatherImageParis} alt="" />
-              <p>{weatherParis} C</p>
-              <p>In Paris</p>
-            </div>
-            <div className="countryWeather">
-              <img className="imageSun" src={weatherImageLondon} alt="" />
-              <p>{weatherLondon} C</p>
-              <p>In London</p>
-            </div>
-          </div>
-          <div
-            className={!props.sideBar ? "wrapper" : "dead"}
-            onMouseEnter={() => {
-              axios
-                .get("https://worldcupfunfact.elarifamine1.workers.dev")
-                .then((response) => {
-                  console.log(response.data);
-                  setFact(response.data);
-                  document.querySelector(".back-face > span").innerHTML =
-                    response.data;
-                });
-            }}
-          >
-            <div class="card front-face">
-              <h1>Hover over me for a world cup fun fact!</h1>
-              <img src={factsImage}></img>
-            </div>
-            <div class="card back-face">
-              <span></span>
-              <button
-                onClick={() => {
-                  console.log(fact);
-                  navigate(`/Translate/${fact}`);
-                }}
-              >
-                Translate this fact to arabic!
-              </button>
-            </div>
-          </div>
+          {topLayer && (
+            <>
+              <div className={!props.sideBar ? "weather" : "weatherold"}>
+                <SpringIn>
+                  <div className="countryWeather">
+                    <img className="imageSun" src={weatherImage} alt="" />
+                    <p>{weatherDubai} C</p>
+                    <p>In Dubai</p>
+                  </div>
+                  <div className="countryWeather">
+                    <img className="imageSun" src={weatherImageCasa} alt="" />
+                    <p>{weatherCasa} C</p>
+                    <p>In Casablanca</p>
+                  </div>
+                  <div className="countryWeather">
+                    <img className="imageSun" src={weatherImageParis} alt="" />
+                    <p>{weatherParis} C</p>
+                    <p>In Paris</p>
+                  </div>
+                  <div className="countryWeather">
+                    <img className="imageSun" src={weatherImageLondon} alt="" />
+                    <p>{weatherLondon} C</p>
+                    <p>In London</p>
+                  </div>
+                </SpringIn>
+              </div>
+            </>
+          )}
+          {topLayer && (
+            <>
+              <SpringIn>
+                <div
+                  className={!props.sideBar ? "wrapper" : "dead"}
+                  onMouseEnter={() => {
+                    axios
+                      .get("https://worldcupfunfact.elarifamine1.workers.dev")
+                      .then((response) => {
+                        console.log(response.data);
+                        setFact(response.data);
+                        document.querySelector(".back-face > span").innerHTML =
+                          response.data;
+                      });
+                  }}
+                >
+                  <div class="card front-face">
+                    <h1>Hover over me for a world cup fun fact!</h1>
+                    <img src={factsImage}></img>
+                  </div>
+
+                  <div class="card back-face">
+                    <span></span>
+                    <button
+                      onClick={() => {
+                        console.log(fact);
+                        navigate(`/Translate/${fact}`);
+                      }}
+                    >
+                      Translate this fact to arabic!
+                    </button>
+                  </div>
+                </div>
+              </SpringIn>
+            </>
+          )}
         </div>
-        <div className="matches">
-          <h2>FootBall Matches</h2>
-          {match}
-        </div>
+
+        <SpringIn>
+          <div className="matches">
+            <h2>FootBall Matches</h2>
+            {match}
+          </div>
+        </SpringIn>
       </div>
     </>
   );

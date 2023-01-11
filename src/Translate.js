@@ -88,16 +88,19 @@ function Translate(props) {
                 rows="10"
               ></textarea>
               {loading ? (
-                <Circles
-                  className="leftRight"
-                  height="80"
-                  width="80"
-                  color="#560617"
-                  ariaLabel="circles-loading"
-                  wrapperStyle={{}}
-                  wrapperClass=""
-                  visible={true}
-                />
+                <div className="leftRightTwo">
+                  {" "}
+                  <Circles
+                    className="leftRight"
+                    height="80"
+                    width="80"
+                    color="#560617"
+                    ariaLabel="circles-loading"
+                    wrapperStyle={{}}
+                    wrapperClass=""
+                    visible={true}
+                  />
+                </div>
               ) : (
                 <img className="leftRight" src={leftRight} alt="" />
               )}
