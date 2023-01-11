@@ -1,11 +1,13 @@
 import loop from "./imgs/Loop.svg";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 function Loop(props) {
+  const location = useLocation();
   const naviagate = useNavigate();
   let [search, setSearch] = useState("");
-
+  console.log(location.pathname);
   return (
     <>
       <div className="Loop">

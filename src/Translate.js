@@ -63,50 +63,52 @@ function Translate(props) {
 
   return (
     <>
-      <Loop sideBar={props.sideBar} setSideBar={props.setSideBar} />
-      <div id="Translate">
-        <div className="Container">
-          <select
-            onChange={(e) => {
-              setLanguage(e.target.value);
-            }}
-            className="selectLang"
-          >
-            {langList}
-          </select>
-
-          <div className="textAreaDiv">
-            <textarea
-              value={searchTerm}
+      <div className="widthCent">
+        <Loop sideBar={props.sideBar} setSideBar={props.setSideBar} />
+        <div id="Translate">
+          <div className="Container">
+            <select
               onChange={(e) => {
-                setSearchTerm(e.target.value);
+                setLanguage(e.target.value);
               }}
-              name=""
-              id=""
-              cols="30"
-              rows="10"
-            ></textarea>
-            {loading ? (
-              <Circles
-                className="leftRight"
-                height="80"
-                width="80"
-                color="#560617"
-                ariaLabel="circles-loading"
-                wrapperStyle={{}}
-                wrapperClass=""
-                visible={true}
-              />
-            ) : (
-              <img className="leftRight" src={leftRight} alt="" />
-            )}
-            <textarea
-              value={translatedText}
-              name=""
-              id=""
-              cols="30"
-              rows="10"
-            ></textarea>
+              className="selectLang"
+            >
+              {langList}
+            </select>
+
+            <div className="textAreaDiv">
+              <textarea
+                value={searchTerm}
+                onChange={(e) => {
+                  setSearchTerm(e.target.value);
+                }}
+                name=""
+                id=""
+                cols="30"
+                rows="10"
+              ></textarea>
+              {loading ? (
+                <Circles
+                  className="leftRight"
+                  height="80"
+                  width="80"
+                  color="#560617"
+                  ariaLabel="circles-loading"
+                  wrapperStyle={{}}
+                  wrapperClass=""
+                  visible={true}
+                />
+              ) : (
+                <img className="leftRight" src={leftRight} alt="" />
+              )}
+              <textarea
+                value={translatedText}
+                name=""
+                id=""
+                cols="30"
+                rows="10"
+              ></textarea>
+            </div>
           </div>
         </div>
       </div>

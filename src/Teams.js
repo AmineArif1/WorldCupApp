@@ -24,7 +24,6 @@ function Teams(props) {
   var teamsList = teams.map((team) => {
     return (
       <div>
-        <Loop sideBar={props.sideBar} setSideBar={props.setSideBar} />
         <h1 className="group">Group {team.group}</h1>
         <div className="team">
           <table className="styled-table">
@@ -74,7 +73,14 @@ function Teams(props) {
     );
   });
 
-  return <div className="Teams">{teamsList}</div>;
+  return (
+    <>
+      <div className={props.sideBar ? "widthTmanin" : "widthCent"}>
+        <Loop sideBar={props.sideBar} setSideBar={props.setSideBar} />
+        <div className="Teams">{teamsList}</div>;
+      </div>
+    </>
+  );
 }
 
 export default Teams;
