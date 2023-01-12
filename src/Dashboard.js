@@ -25,7 +25,7 @@ function Dashboard(props) {
   let [weatherImageLondon, setWeatherImageLondon] = useState(null);
   let [weatherImageParis, setWeatherImageParis] = useState(null);
   let [matches, setMatches] = useState([]);
-  let [topLayer, setTopLayer] = useState();
+  let [topLayer, setTopLayer] = useState(true);
   let [fact, setFact] = useState(null);
   let [search, setSearch] = useState(null);
   const navigate = useNavigate();
